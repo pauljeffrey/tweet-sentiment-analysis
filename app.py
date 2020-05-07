@@ -3,8 +3,12 @@ from flask import Flask, request ,redirect, render_template,url_for
 import gzip
 import dill
 from os.path import abspath
+from pathlib import Path
 
 app = Flask(__name__)
+
+directory = Path.cwd()
+model_path = directory / 'sentiment_ng_model.dill.gz'
 
 @app.route('/about')
 def about():
@@ -31,7 +35,7 @@ def predict():
         tweet = request.args.get('tweet')
     else:
         tweet = request.form['text']
-    with gzip.open(abspath('sentiment_hash_model.dill.gz'), 'rb') as f:
+    with gzip.open(model_path, 'rb') as f:
         model = dill.load(f)
     proba = round(model.predict_proba([tweet])[0,1]* 100,2)
     if (proba <= 52 and proba >= 48):
