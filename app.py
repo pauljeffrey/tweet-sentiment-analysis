@@ -30,7 +30,7 @@ def predict():
         tweet = request.args.get('tweet')
     else:
         tweet = request.form['text']
-    with gzip.open('sentiment_ng_model.dill.gz', 'rb') as f:
+    with gzip.open('sentiment_hash_model.dill.gz', 'rb') as f:
         model = dill.load(f)
     proba = round(model.predict_proba([tweet])[0,1]* 100,2)
     if (proba <= 52 and proba >= 48):
