@@ -2,13 +2,15 @@ from flask import Flask, request ,redirect, render_template,url_for
 
 import gzip
 import dill
-from os.path import abspath
+from os.path import join,abspath,curdir
 from pathlib import Path
 
 app = Flask(__name__)
 
-directory = Path.cwd()
-model_path = directory / 'sentiment_ng_model.dill.gz'
+directory = abspath(curdir)
+model_path = join(directory, 'sentiment_ng_model.dill.gz')
+
+
 
 @app.route('/about')
 def about():
