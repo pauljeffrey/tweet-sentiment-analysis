@@ -3,5 +3,5 @@ __pycache__
 twitter_access.py
 Sent_Analysis.py
 templates/base.css
-sentiment_ng_model.dill.gz
+sentiment_hash_model.dill.gz
 sentiment_tfidf_model.dill.gz
