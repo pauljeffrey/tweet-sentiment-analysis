@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <title> Sentiment Analysis Model </title>
+        <link rel='stylesheet' type='text/css' href='./base.css'>
+        <link rel='stylesheet' type='text/css' href="{{ url_for('static',filename='base.css')}}">
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css'> 
+        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+        
+    </head>
+    <body id='index' >
+        <div id='pageHeader'>
+               <div><ul>
+                        <a href="{{ url_for('projects')}}"><li> My projects </li></a>
+                        <a href="{{url_for('about')}}"><li> Developer </li> </a>
+                        <a href="{{url_for('index')}}"><li> Sentiment Detector </li></a>
+                </ul></div>
+        </div>
+
+        <div id='article'>
+        <div id='description'>
+            <h1 id='heading'> The Sentiment Detector </h1>
+            <p> <i>This machine will attempt to predict/classify the sentiment conveyed in a provided tweet or sentence into
+                positive or negative.</i>
+            </p>
+            <p> <span>Note </span>: <i> The model was trained using about 1.5 million tweets and still prone to errors. For the best result, it is therefore
+            better to input real tweets from the twitter app here (preferably in proper english format). </i></p>
+        </div>
+
+        <div id='form-container'>
+            <h3>Enter tweet/text below: </h3>
+            <form  method='post' action='predict'>
+            <textarea id='text' name = 'text' ></textarea></br>
+            <input id='submit' type = 'submit' value= 'Submit'/>
+    
+        </div>
+        </div>
+
+        
+        </form>
+
+        <div id='pageFooter'>
+            <p id='footer'><i>There are still a lot of challenges and limitations associated with language processing.</i></p>
+        </div>
+        
+    </body>
+
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <title> Sentiment Analysis Model </title>
+        <link rel='stylesheet' type='text/css' href='./base.css'>
+        <link rel='stylesheet' type='text/css' href="{{ url_for('static',filename='base.css')}}">
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css'> 
+        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+        
+    </head>
+    <body id='index' >
+        <div id='pageHeader'>
+               <div><ul>
+                        <a href="{{ url_for('projects')}}"><li> My projects </li></a>
+                        <a href="{{url_for('about')}}"><li> Developer </li> </a>
+                        <a href="{{url_for('index')}}"><li> Sentiment Detector </li></a>
+                </ul></div>
+        </div>
+
+        <div id='article_'>
+            <img id='data-science' src='https://i2.wp.com/www.mime.asia/wp-content/uploads/2019/07/4.-The-Artificial-intelligence-examples-That-People-Havent-Realized.jpg?fit=960%2C534&ssl=1'/>
+            <p id='my-details'><i>Hi, My name is jeffrey otoibhi. Click 
+                <a class='list' href="{{url_for('projects')}}">here</a> to check out my completed projects. You
+               can also check out my <a class='list' href="{{url_for('index')}}">Sentiment Detector Web App</a></i>
+            </p>
+
+        </div>
+        <div id='pageFooter'>
+            <p id='footer'><i>This page is still under development and will be updated subsequently.</i></p>
+        </div>
+</body>
+

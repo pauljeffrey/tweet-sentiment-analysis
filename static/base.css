@@ -1,0 +1,524 @@
+
+#index { 
+  display: grid;
+  grid-template-areas: 
+    "header "
+    "article"
+    "footer";
+  grid-template-rows: 60px 1fr 60px; 
+  grid-template-columns: 100%; 
+  grid-row-gap: 30px;
+  grid-column-gap: 10px;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  } 
+
+  span{
+    color: blue;
+    text-decoration: underline;
+  }
+
+  h1{
+      color : darkblue;
+  }
+
+  #description p{
+    font-size: 20px;
+  }
+
+header, footer, article {
+  padding: 1.2em;
+  /*background: gold;*/
+  }
+
+#pageHeader {
+  grid-area: header;
+  background: rgb(4, 2, 22);
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 10px;
+  }
+
+#pageFooter {
+  grid-area: footer;
+  background: rgb(4, 2, 22);
+  margin-bottom: 0px;
+  border-radius: 5px;
+  color: white;
+ }
+
+#article { 
+  grid-area: article;
+  text-align: center;
+   
+  }
+  
+  ul{
+      display : inline;
+      padding: 40px;
+      padding-top: 60px;
+  }
+  #list{
+      margin: 20px;
+  }
+
+  li{
+      display: inline;
+      color: white;
+      font-size: 25px;
+      margin-left: 70px;
+      margin-right: 40px;
+      padding-top: 30px;
+      
+  }
+
+  img{
+      width: 250px;
+      height: 180px;
+
+  }
+  a 
+  {
+      text-decoration: none;
+  }
+
+  #text{
+    width: 500px;
+    height : 200px;
+    
+  }
+
+  #form-container{
+      width : 80%;
+      height: 60%;
+      text-align: center;
+
+  }
+
+  form{
+      display: inline-block;
+  }
+
+  div{
+      display: inline-block;
+  }
+
+  #input{
+      width: 100%;
+  }
+
+  #submit{
+    width : 100px;
+    height: 40px;
+    background-color: rgb(4, 2, 22);
+    color: white;
+    font-size: 20px; 
+  }
+
+
+
+  #article_{
+    grid-area: article;
+    margin-top: 5px;
+    padding-top: 0px;
+    
+  }
+  
+  #flex-container{
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items : center;
+    
+  }
+  
+  .project-item {
+    border: 1px rgb(4, 2, 22) solid;
+    width: 530px;
+    height: 200px;
+    margin: 50px;
+    margin-bottom: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    font-size: 18px;
+    padding-top: 0px;
+    border-radius: 20px;
+     
+  }
+  
+  #intro{
+    font-size : 28px;
+    text-align : center;
+    width: 100%;
+    margin: 10px;
+    
+  }
+  
+  #intro div{
+    display: inline-block;
+  }
+  
+  i{
+    font-weight: bold;
+  }
+  
+  #project-item  h3 {
+   margin: 0px;
+  }
+  #intro > p{ 
+    font-size: 25px;
+  }
+  
+  .link{
+    color: black;
+    text-decoration: none;
+  }
+  
+  .link:hover{
+    color: black;
+  }
+  
+  .project-head{
+    border-bottom : 1px rgb(4, 2, 22) solid;
+    padding-bottom: 0px;
+    width: 100%;
+    text-align: center;
+    margin-left: 0px;
+    margin-right: 0px;
+    color: rgb(8, 8, 109);
+    font-weight: bolder;
+  }
+  
+  p{
+    padding: 10px;
+  }
+  
+  #data-science{
+    width: 100%;
+    height: 350px;
+    padding-top: 5px;
+    margin-top: 0px;
+    padding-bottom: 15px;
+  }
+  #my-details{
+    font-size: 20px;
+  }
+  #bad{
+    color: red;
+  }
+  #good{
+    color: green;
+  }
+  #neutral{
+    color: yellow;
+  
+  }
+  
+  body{
+    font-family: 'Courier New', Courier ;
+  }
+
+
+  #grid_layout1{
+    display: grid;
+    grid-template-areas: 
+      "header header"
+      "article  nav"
+      "footer footer ";
+    grid-template-rows: 60px 1fr 60px ;  
+    grid-template-columns: 60% 40%;
+    grid-row-gap: 50px;
+    grid-column-gap: 10px;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  
+    }  
+  
+    #pageHeader {
+      grid-area: header;
+      background: rgb(4, 2, 22);
+      border-radius: 5px;
+    }
+  
+  
+  
+    #pageFooter {
+      grid-area: footer;
+      background: rgb(4, 2, 22);
+      margin-bottom: 0px;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 16px;
+     }
+  
+  #mainArticle { 
+    grid-area: article;     
+    }
+  
+  #mainNav { 
+    grid-area: nav; 
+    padding-top: 50px;
+  
+    }
+
+
+/* Stack the layout on small devices/viewports. */
+@media all and (max-width: 575px) {
+  #index { 
+    grid-template-areas: 
+      "header"
+      "article"
+      "footer";
+    grid-template-rows: 40px 1fr  50px;  
+    grid-template-columns: 100%; 
+    grid-row-gap: 30px;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      
+ }
+ #heading{
+   font-size: 25px;
+ }
+
+ #article_{
+  grid-area: article;
+  margin-top: 2px;
+  margin: 3px;
+  padding-top: 0px;
+  padding: 5px;
+  width: auto;
+  text-align: center;
+}
+
+
+#description p{
+  font-size: 12px;
+}
+
+#pageHeader {
+grid-area: header;
+background: rgb(4, 2, 22);
+border-radius: 3px;
+text-align: center;
+padding-top: 5px;
+}
+
+#pageFooter {
+grid-area: footer;
+background: rgb(4, 2, 22);
+margin-bottom: 0px;
+border-radius: 3px;
+color: white;
+font-size: 5px;
+}
+
+#article { 
+grid-area: article;
+text-align: center;
+ 
+}
+
+ul{
+    display : inline;
+    padding: 10px;
+    padding-top: 20px;
+}
+#list{
+    margin: 6px;
+}
+
+li{
+    display: inline;
+    color: white;
+    font-size: 12px;
+    margin-left: 20px;
+    margin-right: 15px;
+    padding-top: 10px;  
+}
+#footer{
+  font-size: 12px;
+}
+
+img{
+    width: 100px;
+    height: 60px;
+
+}
+
+#text{
+  width: 250px;
+  height : 100px;
+  
+}
+
+#form-container{
+    width : 80%;
+    height: 60%;
+    text-align: center;
+
+}
+
+form{
+    display: inline-block;
+}
+
+div{
+    display: inline-block;
+}
+
+#input{
+    width: 100%;
+}
+
+#submit{
+  width : 80px;
+  height: 40px;
+  background-color: rgb(4, 2, 22);
+  color: white;
+  font-size: 20px; 
+}
+
+
+#flex-container{
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items : center;
+  
+}
+
+#flex-container > div {
+  border: 1px rgb(4, 2, 22);
+  width: auto;
+  height: 200px;
+
+}
+
+.project-item {
+  width: auto;
+  height: auto;
+  margin: 3px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 12px;
+  padding-top: 0px;
+  border-radius: 2px;
+  padding: 5px;  
+  border: 1px rgb(4, 2, 22) solid; 
+}
+.project-item p{
+  font-size: 12px;
+}
+.project-name{
+  font-size: 16px;
+  padding: 2px;
+  margin: 0px;
+}
+
+#intro{
+  text-align : center;
+  width: 100%;
+  margin: 3px;
+  
+}
+#intro > p{
+  font-size: 13px;
+}
+
+#intro div{
+  display: inline-block;
+}
+
+i{
+  font-weight: bold;
+}
+
+.link{
+  color: black;
+}
+
+.link:hover{
+  color: black;
+}
+
+.project-head{
+  border-bottom : 1px rgb(4, 2, 22) solid;
+  padding: 0px;
+  width: 100%;
+  text-align: center;
+  margin-left: 0px;
+  margin: 0px;
+  color: rgb(8, 8, 109);
+  font-weight: bolder;
+}
+
+p{
+  padding: 3px;
+}
+
+#data-science{
+  width: 100%;
+  height: 100px;
+  padding-top: 3px;
+  margin-top: 0px;
+  padding-bottom: 5px;
+}
+#my-details{
+  font-size: 12px;
+}
+}
+
+
+/* Stack the layout on small devices/viewports. */
+@media all and (max-width: 575px) {
+  #grid_layout1{ 
+    grid-template-areas: 
+      "header"
+      "article"
+      "nav"
+      "footer";
+    grid-template-rows: 40px 1fr 1fr 40px;  
+    grid-template-columns: 1fr;
+    grid-row-gap: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+ }
+ #mainArticle { 
+  grid-area: article; 
+  text-align: center;    
+  }
+
+#mainNav { 
+  grid-area: nav; 
+  padding-top: 10px;
+  text-align: center;
+
+  }
+#predict-head{
+  font-size: 20px;
+}
+
+#submit{
+  width : 80px;
+  height: 40px;
+  background-color: rgb(4, 2, 22);
+  color: white;
+  font-size: 20px; 
+}
+li{
+  display: inline;
+  color: white;
+  font-size: 12px;
+  margin-left: 20px;
+  margin-right: 15px;
+  padding-top: 10px;  
+}
+
+}

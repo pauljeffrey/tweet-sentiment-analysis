@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <title> Sentiment Analysis Model </title>
+        <link rel='stylesheet' type='text/css' href='./base.css'>
+        <link rel='stylesheet' type='text/css' href="{{ url_for('static',filename='base.css')}}">
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css'> 
+        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+        
+    </head>
+    <body id='grid_layout1' >
+        
+        <div id='pageHeader'>
+            <ul>
+                <a href="{{url_for('projects')}}"><li> My projects </li></a>
+                <a href="{{url_for('about')}}"><li> Developer </li> </a>
+                <a href="{{url_for('index')}}"><li> Tweet Sentiment Analysis </li></a>
+            </ul>
+        </div>
+
+        <div id='mainArticle'>
+                <div id='form-container'>
+                        <div > <h3 id='predict-head'>Enter tweet below: </h3></div>
+                        <form  method='post' action='predict'>
+                        <textarea id='text'  name = 'text' ></textarea></br>
+                        <input id='submit' type = 'submit' value= 'Submit'/>
+                        </form>
+                </div>
+        </div>
+
+        <div id='mainNav'>
+                {% if sent  == 1 %}
+                    <img src= "{{url_for('static',filename='happy.png')}}"/>
+                    <p> <b></c>This tweet conveys a positive sentiment</b> </p>
+                    <p><i>Probability of a positive sentiment: <span id='good'>{{ proba }}%</span></i></p>
+                {% elif sent == -1 %}
+                    <img src = "{{url_for('static',filename='think.png')}}"/>
+                    <p> <b>Hmmmmm...... not sure about the sentiment conveyed in this tweet. Perhaps, its neutral.</b></p> 
+                    <p> <i>Probability of a positive sentiment : <span id='neutral'>{{ proba }}%</span></i></p>
+                {% else %}
+                    <img src = "{{url_for('static',filename='sad.png')}}"/>
+                    <p> <b>This tweet conveys a negative sentiment </b></p>
+                    <p> <i>Probability of a positive sentiment : <span id='bad'>{{ proba }}%</span></i></p>
+                {% endif %}
+
+        </div>
+        
+
+        <div id='pageFooter'>
+
+        </div>
+        
+    </body>
+
+</html>

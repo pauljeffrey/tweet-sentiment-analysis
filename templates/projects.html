@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <title> Sentiment Analysis Model </title>
+        <link rel='stylesheet' type='text/css' href='./base.css'>
+        <link rel='stylesheet' type='text/css' href="{{ url_for('static',filename='base.css')}}">
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css'> 
+        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+        
+    </head>
+    <body id='index' >
+        <div id='pageHeader'>
+            <div>
+                <ul>
+                        <a href="{{ url_for('projects')}}"><li> My projects </li></a>
+                        <a href="{{url_for('about')}}"><li> Developer </li> </a>
+                        <a href="{{url_for('index')}}"><li> Sentiment Detector </li></a>
+                </ul>
+            </div>
+        </div>
+        <div id='article_'>
+            <div id='intro'>
+                
+                <p><i>Machine Learning is a field of data science that seeks to learn and derive insights (relationships) from data
+                    and use this insights to solve problems (e.g prediction, classification or clustering). 
+                    This page contains links to all my completed machine learning projects.</i></p>
+                
+            </div>
+            <div id='flex-container'>
+                    <div class= 'project-item'>
+                        <a class='link' href='https://github.com/jeffreypaula/Loan-Eligibility-Prediction'>
+                        <div class='project-head'><h3 class='project-name'>Loan Status prediction </h3></div></a>
+                        <p>  A company that deals in all home loans wants to automate the loan eligibility process (real time) based on customer detail provided while filling online application form.
+                        </p>
+                    </div>
+                                 
+                    <div class='project-item'>
+                        <a class='link'href='https://github.com/jeffreypaula/Big-Mart-Sales-Prediction'>
+                        <div class='project-head'><h3 class='project-name'>Big Mart Sales Prediction</h3></div></a>
+                        <p> The aim was to build a predictive model and predict the sales of each product at a particular store outlet,
+                        understanding the properties of products and outlets which play a key role in increasing sales.</p>
+                    </div>
+            
+                
+            </div>
+        </div>
+        <div id='pageFooter'>
+            <p id='footer'>This page is still under development and will be updated subsequently.</p>
+        </div>
+            
+    </body>
+    
+</html>
