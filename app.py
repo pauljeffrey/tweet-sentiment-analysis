@@ -7,7 +7,7 @@ from html import unescape
 
 
 import spacy
-from spacy.lang.en import STOP_WORDS
+#from spacy.lang.en import STOP_WORDS
 
 
 
