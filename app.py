@@ -2,14 +2,14 @@ from flask import Flask, request ,redirect, render_template,url_for
 
 import gzip
 from os.path import join,abspath,curdir
-from pathlib import PosixPath
+from pathlib import Path
 import dill
 
 app = Flask(__name__)
 
 cwd = abspath(curdir)
 model_path = join(cwd, 'sentiment_ng_model.dill.gz')
-posixpath = PosixPath(model_path)
+path = Path(model_path)
 
 
 @app.route('/about')
@@ -37,7 +37,7 @@ def predict():
         tweet = request.args.get('tweet')
     else:
         tweet = request.form['text']
-    with open(posixpath, 'rb') as f:
+    with open(path, 'rb') as f:
         model = dill.load(f)
     proba = round(model.predict_proba([tweet])[0,1]* 100,2)
     if (proba <= 52 and proba >= 48):
