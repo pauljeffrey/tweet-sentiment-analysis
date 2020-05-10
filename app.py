@@ -14,7 +14,7 @@ path = Path(model_path).as_posix()
 
 @app.route('/about')
 def about():
-    return render_template('developer.html')
+    return path
 
 @app.route('/projects')
 def projects():
