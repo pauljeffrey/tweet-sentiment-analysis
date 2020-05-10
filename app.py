@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 cwd = abspath(curdir)
 model_path = join(cwd, 'sentiment_ng_model.dill.gz')
-path = Path(model_path)
+path = Path(model_path).as_posix()
 
 
 @app.route('/about')
@@ -38,6 +38,7 @@ def predict():
     else:
         tweet = request.form['text']
     with gzip.open(path, 'rb') as f:
+        print('Now loading dill file')
         model = dill.load(f)
     proba = round(model.predict_proba([tweet])[0,1]* 100,2)
     if (proba <= 52 and proba >= 48):

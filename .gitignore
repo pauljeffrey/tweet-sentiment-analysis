@@ -1,7 +1,6 @@
 __pycache__
 *.pyc 
 twitter_access.py
-Sent_Analysis.py
 templates/base.css
 sentiment_hash_model.dill.gz
 sentiment_tfidf_model.dill.gz
