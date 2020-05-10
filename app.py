@@ -14,7 +14,7 @@ path = Path(model_path).as_posix()
 
 @app.route('/about')
 def about():
-    return path
+    return render_template('developer.html')
 
 @app.route('/projects')
 def projects():
@@ -38,7 +38,6 @@ def predict():
     else:
         tweet = request.form['text']
     with gzip.open(path, 'rb') as f:
-        print('Now loading dill file')
         model = dill.load(f)
     proba = round(model.predict_proba([tweet])[0,1]* 100,2)
     if (proba <= 52 and proba >= 48):

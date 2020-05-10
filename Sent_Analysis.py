@@ -134,7 +134,7 @@ def serialize_model(func):
     #model = construct_model()
     model=  func()
 
-    with gzip.open('sentiment_hash_model.dill.gz', 'wb') as f:
+    with gzip.open('sentiment_ng_model.dill.gz', 'wb') as f:
         dill.dump(model, f, recurse = True)
 
 
@@ -143,9 +143,6 @@ def pickle_model(func):
     with open('sentiment_ng_model.pkl','wb') as f:
         pickle.dump(model,f)
     print('Done')
-
-
-
 
 def remove_rare(df):
     print('Removing the rare words....')
@@ -157,7 +154,7 @@ def remove_rare(df):
 
 if __name__ == '__main__':
     print('initiating training......')
-    df = pd.read_csv('../Sentiment Analysis Dataset.csv', error_bad_lines= False)
+    df = pd.read_csv('Sentiment Analysis Dataset.csv', error_bad_lines= False)
 
     df = remove_rare(df)
 
@@ -171,8 +168,8 @@ if __name__ == '__main__':
 
     #pickle()
     print('Now training and saving the model.....')
-    #serialize_model(online_model)
-    pickle_model(construct_model)
+    serialize_model(construct_model)
+    #pickle_model(construct_model)
     #model = online_model()
     #model = construct_model()
     
